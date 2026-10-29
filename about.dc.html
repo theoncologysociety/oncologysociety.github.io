@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-4d4fe465-6e9b-4d0e-852e-a1ccb3403655/styles.css">
+<script src="_ds/industry-4d4fe465-6e9b-4d0e-852e-a1ccb3403655/_ds_bundle.js"></script>
+<title>About Us — Oncology Society</title>
+<style>body{margin:0;text-wrap:pretty;}</style>
+</helmet>
+<dc-import name="NavBar" current="about" hint-size="100%,64px"></dc-import>
+
+<div style="max-width:1200px;margin:0 auto;padding:0 var(--space-6);">
+
+  <section style="padding:calc(var(--space-8)*2.5) 0 calc(var(--space-8)*1.5);max-width:74ch;">
+    <span style="display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:var(--space-3);">About us</span>
+    <hr class="hr" style="margin:0 0 var(--space-4);max-width:64px;" />
+    <h1 style="font-size:clamp(36px,4.4vw,56px);line-height:1.05;text-transform:uppercase;margin:0 0 var(--space-4);">Why we exist.</h1>
+    <p style="font-size:17px;line-height:1.65;color:color-mix(in srgb, var(--color-text) 78%, transparent);margin:0;">The Oncology Society was founded on a simple observation: students who want to work in cancer research or care rarely have a clear on-ramp. We build that on-ramp — education, mentorship, and a community of peers moving in the same direction.</p>
+  </section>
+
+  <section style="padding:calc(var(--space-8)*1.5) 0;display:grid;grid-template-columns:5fr 7fr;gap:calc(var(--space-8)*1.5);align-items:center;">
+    <figure class="blueprint duotone" style="margin:0;aspect-ratio:4/5;">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="about-history-photo" shape="rect" placeholder="Drop an archival or founding photo" hint-size="100%,100%" style="width:100%;height:100%;"></x-import>
+    </figure>
+    <div>
+      <span style="display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:var(--space-2);">Our history</span>
+      <hr class="hr" style="margin:0 0 var(--space-4);max-width:64px;" />
+      <p style="font-size:16px;line-height:1.65;color:color-mix(in srgb, var(--color-text) 78%, transparent);margin:0 0 var(--space-3);max-width:56ch;">[Placeholder] The Oncology Society began as a single campus chapter and has grown into a multi-chapter network of students, researchers and clinicians collaborating on education and outreach.</p>
+      <p style="font-size:16px;line-height:1.65;color:color-mix(in srgb, var(--color-text) 78%, transparent);margin:0;max-width:56ch;">[Placeholder] Founding milestones, key partnerships, and the organization's growth story will be detailed here.</p>
+    </div>
+  </section>
+
+  <section style="padding:calc(var(--space-8)*2) 0;">
+    <span style="display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:var(--space-2);">Our goals</span>
+    <hr class="hr" style="margin:0 0 var(--space-6);max-width:64px;" />
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);">
+      <div class="blueprint" style="padding:var(--space-6) var(--space-4);transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;" style-hover="transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--color-accent);">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" style="margin-bottom:var(--space-3);"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg>
+        <h3 style="font-size:18px;text-transform:uppercase;margin:0 0 var(--space-2);">Expand access</h3>
+        <p style="font-size:13px;opacity:0.8;margin:0;">[Placeholder] Bring oncology education to students regardless of campus resources.</p>
+      </div>
+      <div class="blueprint" style="padding:var(--space-6) var(--space-4);transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;" style-hover="transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--color-accent);">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" style="margin-bottom:var(--space-3);"><path d="M12 3l2.5 5 5.5.7-4 4 1 5.5-5-2.7-5 2.7 1-5.5-4-4 5.5-.7z"></path></svg>
+        <h3 style="font-size:18px;text-transform:uppercase;margin:0 0 var(--space-2);">Grow leaders</h3>
+        <p style="font-size:13px;opacity:0.8;margin:0;">[Placeholder] Train students to lead chapters, research teams and outreach efforts.</p>
+      </div>
+      <div class="blueprint" style="padding:var(--space-6) var(--space-4);transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;" style-hover="transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--color-accent);">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" style="margin-bottom:var(--space-3);"><path d="M4 20V10M12 20V4M20 20v-7"></path></svg>
+        <h3 style="font-size:18px;text-transform:uppercase;margin:0 0 var(--space-2);">Measure impact</h3>
+        <p style="font-size:13px;opacity:0.8;margin:0;">[Placeholder] Track reach of educational content, events and chapter growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:calc(var(--space-8)*2) 0;">
+    <span style="display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:var(--space-2);">Our values</span>
+    <hr class="hr" style="margin:0 0 var(--space-6);max-width:64px;" />
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6);">
+      <div><h4 style="font-size:16px;text-transform:uppercase;margin:0 0 var(--space-2);">Rigor</h4><p style="font-size:13px;opacity:0.8;margin:0;">[Placeholder] Accuracy in every piece of research we communicate.</p></div>
+      <div><h4 style="font-size:16px;text-transform:uppercase;margin:0 0 var(--space-2);">Access</h4><p style="font-size:13px;opacity:0.8;margin:0;">[Placeholder] Oncology education open to every student, everywhere.</p></div>
+      <div><h4 style="font-size:16px;text-transform:uppercase;margin:0 0 var(--space-2);">Community</h4><p style="font-size:13px;opacity:0.8;margin:0;">[Placeholder] A network of peers, not a solitary path.</p></div>
+      <div><h4 style="font-size:16px;text-transform:uppercase;margin:0 0 var(--space-2);">Service</h4><p style="font-size:13px;opacity:0.8;margin:0;">[Placeholder] Outreach that reaches beyond the classroom.</p></div>
+    </div>
+  </section>
+
+  <section style="padding:calc(var(--space-8)*1.5) 0 calc(var(--space-8)*2.5);max-width:70ch;">
+    <span style="display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:var(--space-2);">Why oncology education matters</span>
+    <hr class="hr" style="margin:0 0 var(--space-4);max-width:64px;" />
+    <p style="font-size:16px;line-height:1.65;color:color-mix(in srgb, var(--color-text) 78%, transparent);margin:0;">[Placeholder] Cancer touches nearly every family, yet oncology remains under-taught at the undergraduate level. Early exposure builds the next generation of researchers, clinicians and advocates — and a more informed public.</p>
+  </section>
+
+</div>
+
+<dc-import name="SiteFooter" hint-size="100%,320px"></dc-import>
+
+</x-dc>
+</body>
+</html>

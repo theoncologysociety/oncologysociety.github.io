@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-4d4fe465-6e9b-4d0e-852e-a1ccb3403655/styles.css">
+<script src="_ds/industry-4d4fe465-6e9b-4d0e-852e-a1ccb3403655/_ds_bundle.js"></script>
+<title>Learn Oncology! — Oncology Society</title>
+<style>body{margin:0;text-wrap:pretty;}</style>
+</helmet>
+<dc-import name="NavBar" current="learn" hint-size="100%,64px"></dc-import>
+
+<div style="max-width:1200px;margin:0 auto;padding:0 var(--space-6);">
+
+  <section style="padding:calc(var(--space-8)*2.5) 0 calc(var(--space-8)*1.5);max-width:74ch;">
+    <span style="display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:var(--space-3);">Learn oncology!</span>
+    <hr class="hr" style="margin:0 0 var(--space-4);max-width:64px;" />
+    <h1 style="font-size:clamp(36px,4.4vw,56px);line-height:1.05;text-transform:uppercase;margin:0 0 var(--space-4);">A running feed of oncology education.</h1>
+    <p style="font-size:17px;line-height:1.65;color:color-mix(in srgb, var(--color-text) 78%, transparent);margin:0;">Two ongoing series feed one chronological hub — newest first, everything from social posts to research summaries.</p>
+  </section>
+
+  <section style="padding:0 0 calc(var(--space-8)*2);">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6);">
+      <div class="blueprint" style="padding:var(--space-6);transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;" style-hover="transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--color-accent);">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <span class="tag tag-accent" style="margin-bottom:var(--space-3);">Series</span>
+        <h3 style="font-size:19px;text-transform:uppercase;margin:0 0 var(--space-2);">Cancer of the Month</h3>
+        <p style="font-size:13px;opacity:0.8;margin:0;">A monthly deep-dive into one cancer type — biology, treatment, and where research stands today.</p>
+      </div>
+      <div class="blueprint" style="padding:var(--space-6);transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;" style-hover="transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--color-accent);">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <span class="tag tag-accent" style="margin-bottom:var(--space-3);">Series</span>
+        <h3 style="font-size:19px;text-transform:uppercase;margin:0 0 var(--space-2);">Research Condensed</h3>
+        <p style="font-size:13px;opacity:0.8;margin:0;">Recent oncology papers, summarized for students without a research background.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:0 0 var(--space-6);">
+    <div class="seg">
+      <label class="seg-opt"><input type="radio" name="tag" checked="{{ isAll }}" onChange="{{ setAll }}" />All</label>
+      <label class="seg-opt"><input type="radio" name="tag" checked="{{ isPost }}" onChange="{{ setPost }}" />Instagram Post</label>
+      <label class="seg-opt"><input type="radio" name="tag" checked="{{ isResearch }}" onChange="{{ setResearch }}" />Research Summary</label>
+      <label class="seg-opt"><input type="radio" name="tag" checked="{{ isSeries }}" onChange="{{ setSeries }}" />Educational Series</label>
+    </div>
+  </section>
+
+  <section style="padding:0 0 calc(var(--space-8)*3);">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);">
+      <sc-for list="{{ feed }}" as="post" hint-placeholder-count="6">
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+          <figure class="blueprint duotone" style="margin:0;aspect-ratio:4/3;">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="{{ post.id }}" shape="rect" placeholder="Content image" hint-size="100%,100%" style="width:100%;height:100%;"></x-import>
+          </figure>
+          <span class="card-meta">{{ post.date }}</span>
+          <h3 style="font-size:16px;text-transform:uppercase;margin:0;">{{ post.title }}</h3>
+          <span class="tag tag-outline" style="align-self:flex-start;">{{ post.tag }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+</div>
+
+<dc-import name="SiteFooter" hint-size="100%,320px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { tag: 'All' };
+  allPosts = [
+    { id: 'feed-1', date: 'JUL 8, 2026', title: 'Cancer of the Month: Pancreatic Cancer', tag: 'Educational Series' },
+    { id: 'feed-2', date: 'JUL 2, 2026', title: 'New checkpoint inhibitor trial results', tag: 'Research Summary' },
+    { id: 'feed-3', date: 'JUN 24, 2026', title: 'Chapter spotlight: Princeton lab tour', tag: 'Instagram Post' },
+    { id: 'feed-4', date: 'JUN 12, 2026', title: 'Research Condensed: liquid biopsies', tag: 'Research Summary' },
+    { id: 'feed-5', date: 'JUN 1, 2026', title: 'Cancer of the Month: Leukemia', tag: 'Educational Series' },
+    { id: 'feed-6', date: 'MAY 20, 2026', title: 'Members at the AACR conference', tag: 'Instagram Post' },
+  ];
+  renderVals() {
+    const t = this.state.tag;
+    const set = (v) => () => this.setState({ tag: v });
+    return {
+      feed: this.allPosts.filter(p => t === 'All' || p.tag === t),
+      isAll: t === 'All', isPost: t === 'Instagram Post', isResearch: t === 'Research Summary', isSeries: t === 'Educational Series',
+      setAll: set('All'), setPost: set('Instagram Post'), setResearch: set('Research Summary'), setSeries: set('Educational Series'),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-4d4fe465-6e9b-4d0e-852e-a1ccb3403655/styles.css">
+<script src="_ds/industry-4d4fe465-6e9b-4d0e-852e-a1ccb3403655/_ds_bundle.js"></script>
+<title>Team Profile — Oncology Society</title>
+<style>body{margin:0;text-wrap:pretty;}</style>
+</helmet>
+<dc-import name="NavBar" current="team" hint-size="100%,64px"></dc-import>
+
+<div style="max-width:1000px;margin:0 auto;padding:0 var(--space-6);">
+  <a href="team.dc.html" class="btn btn-ghost" style="padding-inline:0;margin-top:var(--space-6);">← Back to Our Team</a>
+
+  <section style="padding:var(--space-6) 0 calc(var(--space-8)*2);display:grid;grid-template-columns:1fr 2fr;gap:calc(var(--space-8)*1.5);align-items:start;">
+    <figure class="blueprint duotone" style="margin:0;aspect-ratio:1;">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="profile-photo" shape="rect" placeholder="Drop a profile photo" hint-size="100%,100%" style="width:100%;height:100%;"></x-import>
+    </figure>
+    <div>
+      <span style="display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:var(--space-2);">{{ title }}</span>
+      <h1 style="font-size:clamp(32px,3.8vw,48px);text-transform:uppercase;line-height:1.05;margin:0 0 var(--space-4);">{{ name }}</h1>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-bottom:var(--space-6);">
+        <div class="blueprint" style="padding:var(--space-4);">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <span class="text-muted" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;">Education</span>
+          <p style="font-size:14px;margin:var(--space-2) 0 0;">{{ edu }}</p>
+        </div>
+        <div class="blueprint" style="padding:var(--space-4);">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <span class="text-muted" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;">Contact</span>
+          <p style="font-size:14px;margin:var(--space-2) 0 0;">[Placeholder email]</p>
+        </div>
+      </div>
+
+      <div style="margin-bottom:var(--space-6);">
+        <h3 style="font-size:16px;text-transform:uppercase;margin:0 0 var(--space-2);">Biography</h3>
+        <p style="font-size:15px;line-height:1.65;color:color-mix(in srgb, var(--color-text) 78%, transparent);margin:0;max-width:56ch;">[Placeholder] A short biography introducing {{ name }} — background, path into oncology, and role within the Oncology Society will appear here.</p>
+      </div>
+
+      <div style="margin-bottom:var(--space-6);">
+        <h3 style="font-size:16px;text-transform:uppercase;margin:0 0 var(--space-2);">Interests</h3>
+        <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;">
+          <span class="tag tag-outline">Placeholder interest</span>
+          <span class="tag tag-outline">Placeholder interest</span>
+          <span class="tag tag-outline">Placeholder interest</span>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-size:16px;text-transform:uppercase;margin:0 0 var(--space-2);">Projects</h3>
+        <p style="font-size:15px;line-height:1.65;color:color-mix(in srgb, var(--color-text) 78%, transparent);margin:0;max-width:56ch;">[Placeholder] Research projects, initiatives led, or chapter programming will be listed here.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<dc-import name="SiteFooter" hint-size="100%,320px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { name: 'Team Member', title: 'Role Title', edu: '[Placeholder] Degree, University' };
+  componentDidMount() {
+    const p = new URLSearchParams(window.location.search);
+    this.setState({
+      name: p.get('name') || 'Team Member',
+      title: p.get('title') || 'Role Title',
+      edu: p.get('edu') || '[Placeholder] Degree, University',
+    });
+  }
+  renderVals() {
+    return { name: this.state.name, title: this.state.title, edu: this.state.edu };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-4d4fe465-6e9b-4d0e-852e-a1ccb3403655/styles.css">
+<script src="_ds/industry-4d4fe465-6e9b-4d0e-852e-a1ccb3403655/_ds_bundle.js"></script>
+<title>Events — Oncology Society</title>
+<style>body{margin:0;text-wrap:pretty;}</style>
+</helmet>
+<dc-import name="NavBar" current="events" hint-size="100%,64px"></dc-import>
+
+<div style="max-width:1200px;margin:0 auto;padding:0 var(--space-6);">
+
+  <section style="padding:calc(var(--space-8)*2.5) 0 calc(var(--space-8)*1.5);max-width:74ch;">
+    <span style="display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:var(--space-3);">Events</span>
+    <hr class="hr" style="margin:0 0 var(--space-4);max-width:64px;" />
+    <h1 style="font-size:clamp(36px,4.4vw,56px);line-height:1.05;text-transform:uppercase;margin:0 0 var(--space-4);">Symposia, panels and chapter meetups.</h1>
+  </section>
+
+  <section style="padding:0 0 var(--space-6);">
+    <div class="seg">
+      <label class="seg-opt"><input type="radio" name="chapter" checked="{{ isAll }}" onChange="{{ setFilterAll }}" />All</label>
+      <label class="seg-opt"><input type="radio" name="chapter" checked="{{ isStonyBrook }}" onChange="{{ setFilterStonyBrook }}" />Stony Brook</label>
+      <label class="seg-opt"><input type="radio" name="chapter" checked="{{ isPrinceton }}" onChange="{{ setFilterPrinceton }}" />Princeton</label>
+      <label class="seg-opt"><input type="radio" name="chapter" checked="{{ isVirtual }}" onChange="{{ setFilterVirtual }}" />Virtual</label>
+    </div>
+  </section>
+
+  <section style="padding:0 0 calc(var(--space-8)*2);">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:var(--space-6);">
+      <h2 style="font-size:22px;text-transform:uppercase;margin:0;">Upcoming</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);">
+      <sc-for list="{{ upcoming }}" as="ev" hint-placeholder-count="3">
+        <div class="card blueprint" style="padding:var(--space-4);gap:var(--space-2);transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;" style-hover="transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--color-accent);">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <span class="tag tag-accent" style="align-self:flex-start;">{{ ev.chapter }}</span>
+          <span class="card-meta">{{ ev.date }}</span>
+          <h3 class="card-title">{{ ev.title }}</h3>
+          <p class="card-body">{{ ev.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding:0 0 calc(var(--space-8)*3);">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:var(--space-6);">
+      <h2 style="font-size:22px;text-transform:uppercase;margin:0;">Past events</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);">
+      <sc-for list="{{ past }}" as="ev" hint-placeholder-count="3">
+        <div class="card" style="padding:var(--space-4);gap:var(--space-2);opacity:0.75;transition:opacity 0.25s ease, border-color 0.25s ease;border:1px solid transparent;" style-hover="opacity:1;border-color:var(--color-divider);">
+          <span class="tag tag-neutral" style="align-self:flex-start;">{{ ev.chapter }}</span>
+          <span class="card-meta">{{ ev.date }}</span>
+          <h3 class="card-title">{{ ev.title }}</h3>
+          <p class="card-body">{{ ev.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+</div>
+
+<dc-import name="SiteFooter" hint-size="100%,320px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { filter: 'All' };
+  allUpcoming = [
+    { chapter: 'Stony Brook', date: 'SEP 18, 2026', title: 'Oncology Research Symposium', desc: 'Student research talks and a keynote from a visiting oncologist.' },
+    { chapter: 'Princeton', date: 'OCT 3, 2026', title: 'Careers in Oncology Panel', desc: 'Clinicians and researchers on paths into oncology practice and research.' },
+    { chapter: 'Virtual', date: 'NOV 14, 2026', title: 'Chapter Leadership Summit', desc: 'Chapter leads convene to share programming and plan the spring term.' },
+  ];
+  allPast = [
+    { chapter: 'Stony Brook', date: 'MAR 4, 2026', title: 'Lab Tour Series', desc: 'A behind-the-scenes look at an active oncology research lab.' },
+    { chapter: 'Princeton', date: 'FEB 12, 2026', title: 'Research Condensed Reading Group', desc: 'Members broke down a recent immunotherapy paper together.' },
+    { chapter: 'Stony Brook', date: 'NOV 9, 2025', title: 'Cancer Awareness Week', desc: 'A week of tabling, talks and fundraising for cancer research.' },
+  ];
+  renderVals() {
+    const f = this.state.filter;
+    const match = (ev) => f === 'All' || ev.chapter === f;
+    const setFilter = (v) => () => this.setState({ filter: v });
+    return {
+      upcoming: this.allUpcoming.filter(match),
+      past: this.allPast.filter(match),
+      isAll: f === 'All', isStonyBrook: f === 'Stony Brook', isPrinceton: f === 'Princeton', isVirtual: f === 'Virtual',
+      setFilterAll: setFilter('All'), setFilterStonyBrook: setFilter('Stony Brook'),
+      setFilterPrinceton: setFilter('Princeton'), setFilterVirtual: setFilter('Virtual'),
+    };
+  }
+}
+</script>
+</body>
+</html>
