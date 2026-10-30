@@ -26,53 +26,53 @@
   </section>
 
   <section style="padding:0 0 calc(var(--space-8)*3);">
-    <div class="r-pair" style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6);">
+    <div class="r-team" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-8) var(--space-6);">
 
-      <a href="team-profile.html?name=Cameron+Persaud&title=CEO&edu=B.S.+Biology%2C+Stony+Brook+University" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
-        <figure class="blueprint duotone" style="margin:0;aspect-ratio:1;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-1" shape="rect" placeholder="Photo" hint-size="100%,100%" style="width:100%;height:100%;"></x-import></figure>
+      <a href="team-profile.html?name=Cameron+Persaud&title=CEO&edu=B.S.+Biology%2C+Stony+Brook+University" class="r-member" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);min-width:0;transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
+        <figure class="blueprint duotone r-member-photo" style="margin:0;position:relative;width:100%;aspect-ratio:1/1;flex:none;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-1" shape="rect" placeholder="Photo" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;"></x-import></figure>
         <div><h3 style="font-size:17px;text-transform:uppercase;margin:0;">Cameron Persaud</h3><p class="text-muted" style="font-size:13px;margin:2px 0 0;">CEO</p></div>
       </a>
 
-      <a href="team-profile.html?name=Mabel+Li&title=CFO&edu=B.A.+Psychology%2C+Princeton+University" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
-        <figure class="blueprint duotone" style="margin:0;aspect-ratio:1;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-2" shape="rect" placeholder="Photo" hint-size="100%,100%" style="width:100%;height:100%;"></x-import></figure>
+      <a href="team-profile.html?name=Mabel+Li&title=CFO&edu=B.A.+Psychology%2C+Princeton+University" class="r-member" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);min-width:0;transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
+        <figure class="blueprint duotone r-member-photo" style="margin:0;position:relative;width:100%;aspect-ratio:1/1;flex:none;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-2" shape="rect" placeholder="Photo" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;"></x-import></figure>
         <div><h3 style="font-size:17px;text-transform:uppercase;margin:0;">Mabel Li</h3><p class="text-muted" style="font-size:13px;margin:2px 0 0;">CFO</p></div>
       </a>
 
-      <a href="team-profile.html?name=Erica Zheng&title=CSO&edu=B.S.+Biochemistry%2C+Stony+Brook+University" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
-        <figure class="blueprint duotone" style="margin:0;aspect-ratio:1;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-3" shape="rect" placeholder="Photo" hint-size="100%,100%" style="width:100%;height:100%;"></x-import></figure>
+      <a href="team-profile.html?name=Erica Zheng&title=CSO&edu=B.S.+Biochemistry%2C+Stony+Brook+University" class="r-member" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);min-width:0;transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
+        <figure class="blueprint duotone r-member-photo" style="margin:0;position:relative;width:100%;aspect-ratio:1/1;flex:none;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-3" shape="rect" placeholder="Photo" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;"></x-import></figure>
         <div><h3 style="font-size:17px;text-transform:uppercase;margin:0;">Erica Zheng</h3><p class="text-muted" style="font-size:13px;margin:2px 0 0;">CSO</p></div>
       </a>
 
-      <a href="team-profile.html?name=Banghua Pan&title=Senior Vice President&edu=B.A.+Molecular+Biology%2C+Princeton+University" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
-        <figure class="blueprint duotone" style="margin:0;aspect-ratio:1;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-4" shape="rect" placeholder="Photo" hint-size="100%,100%" style="width:100%;height:100%;"></x-import></figure>
+      <a href="team-profile.html?name=Banghua Pan&title=Senior Vice President&edu=B.A.+Molecular+Biology%2C+Princeton+University" class="r-member" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);min-width:0;transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
+        <figure class="blueprint duotone r-member-photo" style="margin:0;position:relative;width:100%;aspect-ratio:1/1;flex:none;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-4" shape="rect" placeholder="Photo" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;"></x-import></figure>
         <div><h3 style="font-size:17px;text-transform:uppercase;margin:0;">Banghua Pan</h3><p class="text-muted" style="font-size:13px;margin:2px 0 0;">Senior Vice President</p></div>
       </a>
 
-      <a href="team-profile.html?name=Irene Liu&title=Social Media Associate&edu=B.S.+Biology%2C+Stony+Brook+University" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
-        <figure class="blueprint duotone" style="margin:0;aspect-ratio:1;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-5" shape="rect" placeholder="Photo" hint-size="100%,100%" style="width:100%;height:100%;"></x-import></figure>
+      <a href="team-profile.html?name=Irene Liu&title=Social Media Associate&edu=B.S.+Biology%2C+Stony+Brook+University" class="r-member" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);min-width:0;transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
+        <figure class="blueprint duotone r-member-photo" style="margin:0;position:relative;width:100%;aspect-ratio:1/1;flex:none;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-5" shape="rect" placeholder="Photo" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;"></x-import></figure>
         <div><h3 style="font-size:17px;text-transform:uppercase;margin:0;">Irene Liu</h3><p class="text-muted" style="font-size:13px;margin:2px 0 0;">Social Media Associate</p></div>
       </a>
 
-      <a href="team-profile.html?name=Sofia+Ramirez&title=Chapters+Coordinator&edu=B.S.+Neuroscience%2C+Princeton+University" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
-        <figure class="blueprint duotone" style="margin:0;aspect-ratio:1;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-6" shape="rect" placeholder="Photo" hint-size="100%,100%" style="width:100%;height:100%;"></x-import></figure>
+      <a href="team-profile.html?name=Sofia+Ramirez&title=Chapters+Coordinator&edu=B.S.+Neuroscience%2C+Princeton+University" class="r-member" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);min-width:0;transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
+        <figure class="blueprint duotone r-member-photo" style="margin:0;position:relative;width:100%;aspect-ratio:1/1;flex:none;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-6" shape="rect" placeholder="Photo" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;"></x-import></figure>
         <div><h3 style="font-size:17px;text-transform:uppercase;margin:0;">Sofia Ramirez</h3><p class="text-muted" style="font-size:13px;margin:2px 0 0;">Chapters Coordinator</p></div>
       </a>
 
-      <a href="team-profile.html?name=Ethan+Wright&title=Treasurer&edu=B.S.+Economics%2C+Stony+Brook+University" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
-        <figure class="blueprint duotone" style="margin:0;aspect-ratio:1;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-7" shape="rect" placeholder="Photo" hint-size="100%,100%" style="width:100%;height:100%;"></x-import></figure>
+      <a href="team-profile.html?name=Ethan+Wright&title=Treasurer&edu=B.S.+Economics%2C+Stony+Brook+University" class="r-member" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);min-width:0;transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
+        <figure class="blueprint duotone r-member-photo" style="margin:0;position:relative;width:100%;aspect-ratio:1/1;flex:none;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-7" shape="rect" placeholder="Photo" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;"></x-import></figure>
         <div><h3 style="font-size:17px;text-transform:uppercase;margin:0;">Ethan Wright</h3><p class="text-muted" style="font-size:13px;margin:2px 0 0;">Treasurer</p></div>
       </a>
 
-      <a href="team-profile.html?name=Lena+Kowalski&title=Secretary&edu=B.A.+Biology%2C+Princeton+University" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
-        <figure class="blueprint duotone" style="margin:0;aspect-ratio:1;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-8" shape="rect" placeholder="Photo" hint-size="100%,100%" style="width:100%;height:100%;"></x-import></figure>
+      <a href="team-profile.html?name=Lena+Kowalski&title=Secretary&edu=B.A.+Biology%2C+Princeton+University" class="r-member" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:var(--space-3);min-width:0;transition:transform 0.25s ease;" style-hover="transform:translateY(-6px);">
+        <figure class="blueprint duotone r-member-photo" style="margin:0;position:relative;width:100%;aspect-ratio:1/1;flex:none;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-8" shape="rect" placeholder="Photo" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;"></x-import></figure>
         <div><h3 style="font-size:17px;text-transform:uppercase;margin:0;">Lena Kowalski</h3><p class="text-muted" style="font-size:13px;margin:2px 0 0;">Secretary</p></div>
       </a>
 
