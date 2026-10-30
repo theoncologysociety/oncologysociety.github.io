@@ -9,6 +9,7 @@
 <x-dc>
 <helmet>
 <link rel="stylesheet" href="_ds/industry-4d4fe465-6e9b-4d0e-852e-a1ccb3403655/styles.css">
+<link rel="stylesheet" href="responsive.css">
 <script src="_ds/industry-4d4fe465-6e9b-4d0e-852e-a1ccb3403655/_ds_bundle.js"></script>
 <title>Oncology Society — Education and Leadership in Cancer Care</title>
 <style>
@@ -20,13 +21,13 @@ body{margin:0;text-wrap:pretty;}
 
 <div style="max-width:1200px;margin:0 auto;padding:0 var(--space-6);">
 
-  <section style="padding:calc(var(--space-8)*3) 0 calc(var(--space-8)*2);display:grid;grid-template-columns:1.1fr 0.9fr;gap:calc(var(--space-8)*2);align-items:center;">
+  <section class="r-stack" style="padding:calc(var(--space-8)*3) 0 calc(var(--space-8)*2);display:grid;grid-template-columns:1.1fr 0.9fr;gap:calc(var(--space-8)*2);align-items:center;">
     <div>
       <span style="display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:var(--space-3);">Student-led · Oncology Education</span>
       <hr class="hr" style="margin:0 0 var(--space-4);max-width:64px;" />
       <h1 style="font-size:clamp(40px,5.2vw,72px);line-height:1.03;letter-spacing:0.005em;text-transform:uppercase;margin:0 0 var(--space-4);">Education and leadership in cancer care.</h1>
       <p style="font-size:17px;line-height:1.6;max-width:52ch;color:color-mix(in srgb, var(--color-text) 78%, transparent);margin:0 0 var(--space-6);">The Oncology Society builds awareness, education, leadership and collaboration in oncology — through student-led initiatives, research communication, and partnerships across chapters and campuses.</p>
-      <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+      <div class="r-btns" style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
         <a href="get-involved.html" class="btn btn-primary" style="min-height:44px;padding-inline:var(--space-6);font-size:14px;">Join Us</a>
         <a href="about.html" class="btn btn-secondary" style="min-height:44px;padding-inline:var(--space-6);font-size:14px;">Learn More</a>
       </div>
@@ -40,7 +41,7 @@ body{margin:0;text-wrap:pretty;}
 </div>
 
 <section aria-label="Oncology Society, by the numbers" style="background:var(--color-accent-900);color:var(--color-bg);padding:calc(var(--space-8)*2) 0;margin-top:var(--space-8);">
-  <div style="max-width:1200px;margin:0 auto;padding:0 var(--space-6);display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:var(--space-8) var(--space-6);">
+  <div class="r-stats" style="max-width:1200px;margin:0 auto;padding:0 var(--space-6);display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:var(--space-8) var(--space-6);">
     <div><p style="font-family:var(--font-heading);font-weight:600;font-size:clamp(32px,3.4vw,48px);margin:0;color:var(--color-bg);">12</p><p style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin:var(--space-2) 0 0;color:color-mix(in srgb, var(--color-bg) 60%, transparent);">Active chapters</p></div>
     <div><p style="font-family:var(--font-heading);font-weight:600;font-size:clamp(32px,3.4vw,48px);margin:0;color:var(--color-bg);">400+</p><p style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin:var(--space-2) 0 0;color:color-mix(in srgb, var(--color-bg) 60%, transparent);">Student members</p></div>
     <div><p style="font-family:var(--font-heading);font-weight:600;font-size:clamp(32px,3.4vw,48px);margin:0;color:var(--color-bg);">60+</p><p style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin:var(--space-2) 0 0;color:color-mix(in srgb, var(--color-bg) 60%, transparent);">Events hosted</p></div>
@@ -50,8 +51,8 @@ body{margin:0;text-wrap:pretty;}
 
 <div style="max-width:1200px;margin:0 auto;padding:0 var(--space-6);">
 
-  <section style="padding:calc(var(--space-8)*2.5) 0;display:grid;grid-template-columns:5fr 7fr;gap:calc(var(--space-8)*1.5);align-items:center;">
-    <figure class="blueprint duotone" style="margin:0;aspect-ratio:4/5;">
+  <section class="r-stack" style="padding:calc(var(--space-8)*2.5) 0;display:grid;grid-template-columns:5fr 7fr;gap:calc(var(--space-8)*1.5);align-items:center;">
+    <figure class="blueprint duotone r-portrait" style="margin:0;aspect-ratio:4/5;">
       <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
       <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="about-photo" shape="rect" placeholder="Drop a photo of students or researchers" hint-size="100%,100%" style="width:100%;height:100%;"></x-import>
     </figure>
@@ -68,7 +69,7 @@ body{margin:0;text-wrap:pretty;}
   <section style="padding:calc(var(--space-8)*1.5) 0 calc(var(--space-8)*2.5);">
     <span style="display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:var(--space-2);">Our mission</span>
     <hr class="hr" style="margin:0 0 var(--space-6);max-width:64px;" />
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-6);">
+    <div class="r-cards" style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-6);">
       <div class="blueprint" style="padding:var(--space-6) var(--space-4);transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;" style-hover="transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--color-accent);">
         <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" style="margin-bottom:var(--space-3);"><path d="M22 10L12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"></path></svg>
@@ -105,7 +106,7 @@ body{margin:0;text-wrap:pretty;}
   <section style="padding:0 0 calc(var(--space-8)*2.5);">
     <span style="display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:var(--space-2);">Featured initiatives</span>
     <hr class="hr" style="margin:0 0 var(--space-6);max-width:64px;" />
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6);">
+    <div class="r-cards" style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6);">
       <a href="learn.html" class="card blueprint" style="text-decoration:none;color:inherit;padding:var(--space-4);gap:var(--space-3);transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;" style-hover="transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--color-accent);">
         <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
         <span class="tag tag-accent">Series</span>
@@ -140,13 +141,13 @@ body{margin:0;text-wrap:pretty;}
 </div>
 
 <section style="background:var(--color-accent-900);color:var(--color-bg);padding:calc(var(--space-8)*2.5) 0;">
-  <div style="max-width:1200px;margin:0 auto;padding:0 var(--space-6);display:grid;grid-template-columns:1.3fr 0.7fr;gap:var(--space-8);align-items:center;">
+  <div class="r-stack" style="max-width:1200px;margin:0 auto;padding:0 var(--space-6);display:grid;grid-template-columns:1.3fr 0.7fr;gap:var(--space-8);align-items:center;">
     <div>
       <span style="display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:color-mix(in srgb, var(--color-bg) 65%, transparent);margin-bottom:var(--space-2);">Get involved</span>
       <h2 style="font-size:32px;text-transform:uppercase;color:var(--color-bg);margin:0 0 var(--space-3);">Volunteer, collaborate, or start a chapter.</h2>
       <p style="font-size:15px;line-height:1.6;color:color-mix(in srgb, var(--color-bg) 78%, transparent);margin:0;max-width:60ch;">Executive, research, education, and outreach teams are open to student members at every campus — and if we're not on yours yet, we'll help you start a chapter.</p>
     </div>
-    <div style="display:flex;gap:var(--space-3);justify-content:flex-end;flex-wrap:wrap;">
+    <div class="r-start r-btns" style="display:flex;gap:var(--space-3);justify-content:flex-end;flex-wrap:wrap;">
       <a href="get-involved.html" class="btn btn-primary" style="min-height:44px;padding-inline:var(--space-6);">Get Involved</a>
       <a href="chapters.html" class="btn btn-secondary" style="min-height:44px;padding-inline:var(--space-6);border-color:color-mix(in srgb, var(--color-bg) 40%, transparent);color:var(--color-bg);">Start a Chapter</a>
     </div>
@@ -162,7 +163,7 @@ body{margin:0;text-wrap:pretty;}
       </div>
       <a href="events.html" class="btn btn-ghost" style="padding-inline:0;">All events →</a>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);">
+    <div class="r-cards" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);">
       <div class="card blueprint" style="padding:var(--space-4);gap:var(--space-2);transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;" style-hover="transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--color-accent);">
         <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
         <span class="card-meta">SEP 18, 2026 · Stony Brook</span>

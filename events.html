@@ -9,9 +9,10 @@
 <x-dc>
 <helmet>
 <link rel="stylesheet" href="_ds/industry-4d4fe465-6e9b-4d0e-852e-a1ccb3403655/styles.css">
+<link rel="stylesheet" href="responsive.css">
 <script src="_ds/industry-4d4fe465-6e9b-4d0e-852e-a1ccb3403655/_ds_bundle.js"></script>
 <title>Events — Oncology Society</title>
-<style>body{margin:0;text-wrap:pretty;}@media (max-width:900px){[style*="grid-template-columns"]{grid-template-columns:1fr !important;}}</style>
+<style>body{margin:0;text-wrap:pretty;}</style>
 </helmet>
 <dc-import name="NavBar" current="events" hint-size="100%,64px"></dc-import>
 
@@ -24,7 +25,7 @@
   </section>
 
   <section style="padding:0 0 var(--space-6);">
-    <div class="seg">
+    <div class="seg r-seg">
       <label class="seg-opt"><input type="radio" name="chapter" checked="{{ isAll }}" onChange="{{ setFilterAll }}" />All</label>
       <label class="seg-opt"><input type="radio" name="chapter" checked="{{ isStonyBrook }}" onChange="{{ setFilterStonyBrook }}" />Stony Brook</label>
       <label class="seg-opt"><input type="radio" name="chapter" checked="{{ isPrinceton }}" onChange="{{ setFilterPrinceton }}" />Princeton</label>
@@ -36,7 +37,7 @@
     <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:var(--space-6);">
       <h2 style="font-size:22px;text-transform:uppercase;margin:0;">Upcoming</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);">
+    <div class="r-cards" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);">
       <sc-for list="{{ upcoming }}" as="ev" hint-placeholder-count="3">
         <div class="card blueprint" style="padding:var(--space-4);gap:var(--space-2);transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;" style-hover="transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--color-accent);">
           <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
@@ -53,7 +54,7 @@
     <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:var(--space-6);">
       <h2 style="font-size:22px;text-transform:uppercase;margin:0;">Past events</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);">
+    <div class="r-cards" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);">
       <sc-for list="{{ past }}" as="ev" hint-placeholder-count="3">
         <div class="card" style="padding:var(--space-4);gap:var(--space-2);opacity:0.75;transition:opacity 0.25s ease, border-color 0.25s ease;border:1px solid transparent;" style-hover="opacity:1;border-color:var(--color-divider);">
           <span class="tag tag-neutral" style="align-self:flex-start;">{{ ev.chapter }}</span>

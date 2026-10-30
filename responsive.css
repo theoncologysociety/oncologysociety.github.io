@@ -1,0 +1,57 @@
+/* Oncology Society — responsive layer.
+   Loaded after the Industry design-system sheet on every page. Layouts are
+   written desktop-first with inline styles, so these overrides use classes
+   (r-*) on the layout containers plus !important to win over inline values. */
+
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-x: clip; }
+
+/* Mobile menu (NavBar) */
+.r-menu-links a { color: inherit; text-decoration: none; padding: 6px 0; }
+.r-menu-links a[aria-current="page"] { color: var(--color-accent); }
+
+/* ── Tablet and below ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  /* Two-column splits (hero, text + photo, CTA bands) stack */
+  .r-stack { grid-template-columns: minmax(0, 1fr) !important; }
+  /* Card grids drop to two columns */
+  .r-cards,
+  .r-pair { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  /* Stat band: 2 × 2 */
+  .r-stats { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; justify-content: stretch !important; }
+  /* Footer: brand row, then link columns side by side, contact full width */
+  .r-footer { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .r-footer > :first-child,
+  .r-footer > :last-child { grid-column: 1 / -1; }
+  /* Tall portrait photos get a shorter crop once stacked */
+  .r-portrait { aspect-ratio: 4 / 3 !important; }
+  /* Right-aligned button rows align left once stacked */
+  .r-start { justify-content: flex-start !important; }
+  /* Profile photo shouldn't fill a whole tablet screen */
+  .r-photo { width: 100%; max-width: 360px; }
+}
+
+/* ── Phones ───────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  /* Tighten the large section rhythm (paddings are multiples of space-8) */
+  :root { --space-8: 18px; }
+
+  .r-cards,
+  .r-stack-sm { grid-template-columns: minmax(0, 1fr) !important; }
+
+  /* Hero / CTA buttons share the row evenly */
+  .r-btns > .btn { flex: 1 1 auto; }
+
+  /* Segmented filters scroll sideways instead of overflowing the page */
+  .r-seg {
+    display: flex; max-width: 100%;
+    overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .r-seg::-webkit-scrollbar { display: none; }
+  .r-seg .seg-opt { flex: none; white-space: nowrap; min-height: 40px; }
+}
+
+/* Touch screens: no lift-on-hover (it sticks after a tap) */
+@media (hover: none) {
+  [class*="scp"]:hover { transform: none !important; }
+}

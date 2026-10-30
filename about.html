@@ -9,9 +9,10 @@
 <x-dc>
 <helmet>
 <link rel="stylesheet" href="_ds/industry-4d4fe465-6e9b-4d0e-852e-a1ccb3403655/styles.css">
+<link rel="stylesheet" href="responsive.css">
 <script src="_ds/industry-4d4fe465-6e9b-4d0e-852e-a1ccb3403655/_ds_bundle.js"></script>
 <title>About Us — Oncology Society</title>
-<style>body{margin:0;text-wrap:pretty;}@media (max-width:900px){[style*="grid-template-columns"]{grid-template-columns:1fr !important;}}</style>
+<style>body{margin:0;text-wrap:pretty;}</style>
 </helmet>
 <dc-import name="NavBar" current="about" hint-size="100%,64px"></dc-import>
 
@@ -24,8 +25,8 @@
     <p style="font-size:17px;line-height:1.65;color:color-mix(in srgb, var(--color-text) 78%, transparent);margin:0;">The Oncology Society was founded on a simple observation: students who want to work in cancer research or care rarely have a clear on-ramp. We build that on-ramp — education, mentorship, and a community of peers moving in the same direction.</p>
   </section>
 
-  <section style="padding:calc(var(--space-8)*1.5) 0;display:grid;grid-template-columns:5fr 7fr;gap:calc(var(--space-8)*1.5);align-items:center;">
-    <figure class="blueprint duotone" style="margin:0;aspect-ratio:4/5;">
+  <section class="r-stack" style="padding:calc(var(--space-8)*1.5) 0;display:grid;grid-template-columns:5fr 7fr;gap:calc(var(--space-8)*1.5);align-items:center;">
+    <figure class="blueprint duotone r-portrait" style="margin:0;aspect-ratio:4/5;">
       <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
       <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="about-history-photo" shape="rect" placeholder="Drop an archival or founding photo" hint-size="100%,100%" style="width:100%;height:100%;"></x-import>
     </figure>
@@ -40,7 +41,7 @@
   <section style="padding:calc(var(--space-8)*2) 0;">
     <span style="display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:var(--space-2);">Our goals</span>
     <hr class="hr" style="margin:0 0 var(--space-6);max-width:64px;" />
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);">
+    <div class="r-cards" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);">
       <div class="blueprint" style="padding:var(--space-6) var(--space-4);transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;" style-hover="transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--color-accent);">
         <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" style="margin-bottom:var(--space-3);"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg>
@@ -65,7 +66,7 @@
   <section style="padding:calc(var(--space-8)*2) 0;">
     <span style="display:block;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:var(--space-2);">Our values</span>
     <hr class="hr" style="margin:0 0 var(--space-6);max-width:64px;" />
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6);">
+    <div class="r-pair" style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6);">
       <div><h4 style="font-size:16px;text-transform:uppercase;margin:0 0 var(--space-2);">Rigor</h4><p style="font-size:13px;opacity:0.8;margin:0;">[Placeholder] Accuracy in every piece of research we communicate.</p></div>
       <div><h4 style="font-size:16px;text-transform:uppercase;margin:0 0 var(--space-2);">Access</h4><p style="font-size:13px;opacity:0.8;margin:0;">[Placeholder] Oncology education open to every student, everywhere.</p></div>
       <div><h4 style="font-size:16px;text-transform:uppercase;margin:0 0 var(--space-2);">Community</h4><p style="font-size:13px;opacity:0.8;margin:0;">[Placeholder] A network of peers, not a solitary path.</p></div>
